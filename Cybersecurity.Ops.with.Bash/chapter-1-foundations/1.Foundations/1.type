@@ -1,0 +1,30 @@
+Type
+-----------------
+Type can be use to identify a word is a keyword, a built-in, a command or none. The -t option keeps the output to a single word.
+Displays information about a command type
+
+       -a        display all locations containing an executable named NAME;
+                includes aliases, builtins, and functions, if and only if
+                the `-p' option is not also used
+      -f        suppress shell function lookup
+      -P        force a PATH search for each NAME, even if it is an alias,
+                builtin, or function, and returns the name of the disk file
+                that would be executed
+      -p        returns either the name of the disk file that would be executed,
+                or nothing if `type -t NAME' would not return `file'
+      -t        output a single word which is one of `alias', `keyword',
+                `function', `builtin', `file' or `', if NAME is an alias,
+                shell reserved word, shell function, shell builtin, disk file,
+                or not found, respectively
+
+type -t if
+type -t pwd
+type -t ls
+
+
+Standard Input (stdin) / Standard Output (stdout)  / Standard Error (stderr)
+----------------------------------------------------------------------------------
+
+    Stdin is the default source for input to a program
+    Stdout is the default place for sending output from a program
+    Stderr can also sent output from a program but it is where error messages are written

@@ -1,0 +1,49 @@
+  Redirection and Piping
+  -------------------------
+    You can change where the program gets its inputs and/or change where it sends it without modifying the program itself.
+
+        handywork < data.in > results.out
+
+        * this will have the input from a data file called data.in, and the output of the program will be snet to results.out
+        * this technique is called redirection because it redirects the input/output from/to different place
+
+    Similarly it can be apply to stderr, and redirect error messages like this:
+        
+        handywork 2> err.mgs
+
+        * this will redirects only stderr and sends any such error message output to a file err.mgs
+
+    The 3 can be combined on the same line:
+        
+        handywork < data.in > results.out 2> err.msgs
+
+    In some cases it might be desired to send the error messages to the normal output :
+        
+        handywork < data.in > results.out 2>&1
+
+        * This says to send stderr (2) to the same location as file descriptor 1 (&1), without the ampersand the error messages
+        would be sent to a file named 1
+
+    The previous scenario is quite common, where stdout and stderr are combined:
+        
+        handywork < data.in &> results.out
+
+    If you want to discard standard output, you can redirect it to a special file called /dev/null :
+
+        handywork < data.in > /dev/null
+
+    To view output on the command line, and simultaneously redirect that same output to a file, we can use the tee command:
+
+        handywork < data.in | tee results.out
+
+        * The -a option on tee command can be used to append to its ouput file rather than overwrite it .
+          The | (pipe) character allows to take the output from one command or script and provide it as input into another command
+
+    To append output, instead of create or truncated a file, double greater sign is needed :
+        
+        handywork < data.in >> results.out
+
+    Similarly it can be used and combined with stderr:
+        
+        handywork < data.in &>> results.out
+        

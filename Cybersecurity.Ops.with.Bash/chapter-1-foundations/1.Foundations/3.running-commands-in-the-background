@@ -1,0 +1,17 @@
+    
+    You can ping and redirect stdout to a file:
+        ping google.com > ping.log &
+
+    If you would like to redirect stdout and stderror to a file :
+        ping google.com &> ping.log &
+
+    You could check the jobs running in the background:
+        jobs
+
+    Use the fg and the corresponding job number to bring task bask into the foreground
+        fg 1
+
+    * If using zsh, you must use this format: fg %1 
+
+    CTRL+Z can be use to suspend a process
+    CTRL+C to end the process
