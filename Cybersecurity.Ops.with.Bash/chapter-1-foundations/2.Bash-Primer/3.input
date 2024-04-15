@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# User input is received in bash by using the read commnand. The read command 
+# obtains user input from stdin and store it in a specified variable
+
+echo "Enter anything: "
+read MYVAR
+echo "The input is: $MYVAR"

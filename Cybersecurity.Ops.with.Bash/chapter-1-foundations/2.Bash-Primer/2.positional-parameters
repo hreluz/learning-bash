@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#In a bash script, the first paramter passed into the script can be accessed using $1, the second using $2, and so on.
+#$0 is a special parameter that holds the name of the script, and $# returns the total number of parameters
+
+
+echo $#
+echo $0
+echo $1
+echo $2
+echo $3
+
+
+#execute
+# ./positional-parameters param1 param2 param3 param4

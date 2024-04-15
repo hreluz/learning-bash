@@ -1,0 +1,17 @@
+#!/bin/bash
+
+MYVAR=textforavalue
+echo $MYVAR
+
+MYVAR2='here is a longer text with spaces with single quotes'
+MYVAR3='here is a longer text with spaces with double quotes'
+
+echo $MYVAR2
+echo $MYVAR3
+
+firstvar=beginning
+secondvar="this is just the $firstvar variables in the string"
+echo $secondvar
+
+CMDOUT=$(pwd)
+echo "printing pwd command $CMDOUT"

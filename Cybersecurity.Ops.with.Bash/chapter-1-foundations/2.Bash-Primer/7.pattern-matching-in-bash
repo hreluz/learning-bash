@@ -1,0 +1,43 @@
+#!/bin/bash
+
+<<EOF
+(*) -> will match any number of any character
+    *.txt -> will match alll the files wit the extension txt
+
+    /usb/bin/g* -> will match all the filesi n /usr/bin that begin with letter g
+
+(?) -> matches a single character
+    source.? -> will match source.c or source.o but NOT source.py or source.pp
+
+[ ] -> 
+    x[abc]y -> matches any or all of the files naemd xay, xby or xcy
+    [0-9] -> for all digits
+    [^aeiou] [!aeiou] -> will match any character except the vowels
+
+
+[:alnum:] -> alphanumeric
+[:alpha:] -> alphabetic
+[:ascii:] -> ASCII
+[:blank:] -> space and tab
+[:ctrl:]  -> control characters
+[:digit:] -> number
+[:graph:] -> anything other tan control characters and space
+[:lower:] -> lowercase
+[:print:] -> anything other than control characters
+[:punt:]  -> punctuation
+[:space:] -> whotespace including breaks:
+[:upper:] -> uppercase
+[:word:]  -> letters, numbers and underscore
+[:xdigit:] -> hexadecimal
+
+    *[[:punct:]]jpg will match any filename that has any number of any character following by the letters jpg like wow!jpg, some,jpg or photo.jpg but not a file named like this.is.myjpg, becasue there is no punctuation before the jpg    
+
+
+* Patterns are not regular expressions    
+* If no pattern is matched, the shell will use the special pattern matching chatacters as literal characters of the filename
+    echo data > /tmp/*.out , but if there is no file in /tmp that ends in out, then the shell will create a file called *.out in the /tmp directory
+* No patter nmatching occurs inside quotes (either double or single quotes)
+    echo data > "/tmp/*.out", it will create a file called /tmp/*.out
+
+
+EOF

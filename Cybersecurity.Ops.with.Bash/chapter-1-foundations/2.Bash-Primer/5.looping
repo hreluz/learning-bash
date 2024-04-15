@@ -1,0 +1,41 @@
+#!/bin/bash
+
+i=0
+while (( i < 10 ))
+do
+    echo $i
+    let i++
+done
+
+while ls | grep -q pdf
+do
+    echo -n 'there is a file with pdf in its name here'
+    pwd
+    cd ...
+done
+
+
+for ((i=0; i < 20 ; i++))
+do
+    echo $i
+done
+
+# for loop can also be used for iterate through all the parameters that are passed
+
+for ARG
+do
+    echo here is an argument: $ARG
+done
+
+for VAL in 20 3 dog peach vainilla
+do
+    echo $VAL
+done
+
+#PDF_FILES=$(ls | grep pdf)
+PDF_FILES=('1file.pdf 2file.pdf 3file.pdf')
+
+for VAL in $PDF_FILES {0..5} {20..25}
+do
+    echo $VAL
+done

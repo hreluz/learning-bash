@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# Any command or program that you invoke in bash may produce output, but it will always return a success or fail value
+# A return value of 0 is considered "sucess" or "true"; any nonzero value is considered "error" or "false"
+
+if cd /tmp
+then
+    echo "here is what is in /tmp: "
+    ls -l | grep on
+fi
+
+
+if ls | grep pdf
+then
+    echo "found mor or pdf files here"
+else
+    echo "no pdf files found"
+fi
+
+
+
+<<EOF
+    -d test if a directory exists
+    -e test if a file exists
+    -r test if a file exists and is readable
+    -w test if a file exists and is writable
+    -x test if a file exists and is executable
+EOF
+
+echo "Insert filename to check if it exists (with full path) : "
+read FILENAME
+
+if [[ -e $FILENAME ]]
+then
+    echo $FILENAME exists
+fi    
+
+<<EOF
+    -eq test for equality between numbers
+    -gt test if one number is greater than another
+    -lt test if one number is less than another
+
+    When comparin nubmer is not recomandable to use symbol < or  >, because it will compare thm as a string, for example 12 is less than 2
+
+    For doing numerical comparisons with < or >, double parenthesis shuld be use
+EOF
+
+
+MIN=1000
+echo "Insert a number to check if it is less than the min (1000): "
+read VAL
+
+if [[ $VAL -lt $MIN ]]
+then
+    echo "value is too small"
+fi
+
+if ((VAL < 12))
+then
+    echo "value $val is too small"
+fi
+
+echo "Insert a path: "
+read DIR
+
+# Two commands can also be separed by either && or || symbols
+[[ -d $DIR ]] && ls "$DIR"
+
+echo "Insert another path: "
+read DIR2
+
+
+# if you want more than one action the then clause, should be grouped
+# [[ -d $DIR2 ]] || echo "error: on such directory $DIR2" ; exit
+[[ -d $DIR2 ]] || { echo "error: on such directory $DIR2" ; exit; }
+
+
+echo "ending program"
+
