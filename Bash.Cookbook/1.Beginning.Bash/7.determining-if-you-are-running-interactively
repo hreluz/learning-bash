@@ -1,0 +1,34 @@
+#!/bin/bash
+
+case "$-" in
+    *i*) echo "Code for interactive shell"
+    ;;
+    *) echo "Code for non-interactive shell"
+    ;;
+esac
+
+# $- is a string listing of all the current shell option flags. I t will contain i if the shell is interactive
+
+# also this can be done, but first one is preferred
+
+if [ -n "$PS1"]; then
+    echo This shell is interactive
+else
+    echo This shell is not interactive
+fi
+
+if [[ $- == *i* ]]
+then
+    echo "It is also interactive"
+else
+    echo "It is not interactive"
+fi
+
+
+ case "$-" in
+ *i*)	echo This shell is interactive ;;
+ *)	echo This shell is not interactive ;;
+esac
+
+[ -z "$PS1" ] && echo "This shell is not interactive" || echo "This shell is interactive"
+

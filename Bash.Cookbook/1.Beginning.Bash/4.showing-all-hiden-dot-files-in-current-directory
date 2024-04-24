@@ -1,0 +1,58 @@
+#!/bin/bash
+<<EOF
+    if it is require to only list the HIDDEN files in a directory, this cannot be done with: 
+        
+        ls -a  -> which shows all files, including normally hidden ones(hidden and not hidden)
+
+        ls -a .*
+EOF
+
+echo $'\nShowing only hidden files with ls -d .* :'
+ls -d ~/.*
+
+echo $'\nList hidden files, starting with ls -d .b* :'
+ls -d ~/.b*
+
+
+echo $'\nList all hidden directories ls -d .*/ :'
+ls -d ~/.*/
+
+echo $'\nShow all the hidden files with ls -d .[!.]* : '
+ls -d ~/.[!.]*
+
+echo $'\nShow all the hidden files that no start with "b", with ls -d .[!.b]* : '
+ls -d ~/.[!.b]*
+
+
+echo $'\nThis format .[!.]* - means to list all the files starting with . and that the 2nd character is anything but a . '
+
+echo $'\n\n It can also be listed the files starting with dot with the echo command as echo .[!]*'
+
+echo $'\nOne special case for ls command when using -d option, and if it ends with a slash (/), then only directories matching that pattern will be shown'
+
+echo $'\nShow hidden directories starting with .v , then ls -d .v*/ : '
+ls -d ~/.v*/
+
+
+echo $'\nShow hidden files starting with .v , then ls -d .v* : '
+ls -d ~/.v*
+
+echo $'\nSome combinations might difficult to match .[!.]* will miss a file named ..foo.
+It can be added something like ..??* to match anything starting with a dot that is also at least 3 chracters long, but ls -d .[!.]* .??* will then display anything that matches both patterns twice'
+
+touch ..foo .a .normal_dot_file normal_file
+
+echo $'\n Showing all files, includding hidden ones : ls -a' 
+ls -a
+
+echo $'\nShowing all files that start with a dot and that could also have a dot as a 2nd character, but it will mis .a : ls -d .??*'
+ls -d .??*
+
+echo $'\nShowing all files that start with a dot, but it misses the ones with 2dots: ls -d .[!.]*'
+ls -d .[!.]*
+
+
+echo $'\nShowing all files starting with . or ..: ls -d .[!.]* .??* | sort -u :'
+ls -d .[!.]* .??* | sort -u 
+
+rm ..foo .a .normal_dot_file normal_file

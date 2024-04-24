@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+echo $'\n$5 is treated as avariable to exapnd, but since it does not exist it is set to null'
+echo A coffee is $5?!
+
+echo $'\nThe echo with simple quotes, work as expected: '
+echo 'A coffee is $5?!'
+
+echo $'\n\nTo mix some shell exapansions with some literal strings you may use the shell escape character backslash  \  or change your quoting'
+
+
+echo 'A coffee is $5 for' "$USER" '?!'
+echo "A coffee is \$5 for $USER ?\!"
+echo "A coffee is \$5 for $USER ?! "
+
+
+echo $'\nIt is not possible to embed a single quote inside single quotes, even if using a backslash, since nothing (not even the backslash) is interpolated inside single quotes'
+
+#echo '$USER won't pay $5 for coffee.'
+echo "$USER won't pay $5 for coffee."
+
+echo "$USER won't pay \$5 for coffee."
+echo 'I won'\''t pay $5 for coffee.'

@@ -1,0 +1,56 @@
+#!/bin/bash
+
+<<EOF
+You want to replace a builtin command with your own function or extenal command.
+Or you've created a new command and it may be conflicting with an existing external or builtin command
+EOF
+
+echo $'\n type cd : '
+type cd
+
+
+echo $'\n type awk : '
+type awk
+
+
+echo $'\n which cd : '
+which cd
+
+
+echo $'\n which awk : '
+which awk
+
+<<EOF
+A builtin command is just that; it is built into the shell itself, while an external command is an external file launched by the shell. The external file may be a binary, or it may be a shell script itself.
+
+
+1.When using a given version of a particular shell, builtins will always be available but external programs may or may not be installed on a particular system.
+
+2.If you give one of your own programs the same name as builtin, you will be very confused about the results since the builtin will aways take precedence
+
+    It is possible to use the "enable" command to turn builtin commands off and on
+
+    enable -a  : will list all builtins and their enabled or disabled status
+
+
+Builtin commands generally can't use a h-h or --help option, but helo command can be used with builtin, for e.g.
+    
+    echo --help     -> won't work
+
+    help echo       -> will do
+
+    help help       -> can be used to check the options
+
+
+When you need to redefine a builtin you use the builtin command to avoid loops. For example to redefine the 'cd' command :
+
+    cd () {
+        builtin cd "$@"
+        echo "$OLDPWD --> $PWD"
+    }
+
+
+To force the use of an external command instead of any function or builtin that would otherwise have precedence, use enable -n,  which turns off shell builtins, ro command, which ignores shell functions
+
+EOF
+

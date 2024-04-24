@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+# pwd prints the working directory where you are now, it  has the -L flag by default where idisplays the logical path. You can also use -P to display your physical location if you use it in  a symlink
+
+
+pwd
+
+echo $'\n By default the pwd command hast the -L flag: '
+pwd -L
+
+echo $'\n The pwd command with -P, display your physicial location (if you use symlink):'
+pwd -P

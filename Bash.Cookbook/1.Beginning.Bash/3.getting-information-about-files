@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# You need more information about a file, such as what it is, who owns it, if its's executable, how many hard links it has, or when it was last accessed or changed
+
+
+echo "Use the ls, stat, file or find commands:"
+PATH=$(pwd)
+FILE="$PATH/1.pwd"
+
+echo $'\nls 1.pwd :'
+/bin/ls $FILE
+
+echo $'\nls -l 1.pwd:'
+/bin/ls -l $FILE
+
+
+echo $'\nstat 1.pwd:'
+/usr/bin/stat $FILE
+
+echo $'\ndetermine the file type. file 1.pwd'
+/usr/bin/file $FILE
+
+
+<<EOF
+    The command ls shows only filenames while -l provides more details about each file.
+    ls has many options
+
+    -a  -> do not hide files starting with .dot
+    -A  -> like -a, but skips the two common directories . and .., since they are present in virtually every directory
+
+    -F  -> shows the type of file
+
+            / -> indicates that the file is a directory
+            * -> means the file is executable
+            @ -> indicates a symbolic link
+            = -> is a socket
+            | -> is a FIFO buffer
+   
+   -l   -> use the long listing format
+   -L   -> show information about the linked file, rather than the symbolic link itself
+   -Q   -> quotes names (literally "filename")\
+   -r   -> reverse the sort order
+   -R   -> recurse through subdirectories
+   -S   -> sort by file size
+   -1   -> use the short format, but with only one file per line
+EOF
+
+
+
+echo $'\n\n'
+echo "start, file and find all have many options that control the output format."
+echo "For example, these options put the similar output to ls -l"
+
+echo $'\nls -l 1.pwd'
+/bin/ls
+
+
+echo $'\nstat -c \'%A %h %U %G %s %y %n\' 1.pwd' 
+/usr/bin/stat -c '%A %h %U %G %s %y %n' 1.pwd
+
+echo $'\nfind . -name 1.pwd -printf \'%m %n %u %g %t %p\''
+/usr/bin/find . -name 1.pwd -printf '%m %n %u %g %t %p'

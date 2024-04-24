@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo $'\n Check bash is installed with: bash --version '
+bash --version
+
+echo $'\n\n List shells with: chsh -l '
+chsh -l
+
+echo $'\n\n Or with: cat /etc/shells '
+cat /etc/shells
+
+echo $'\n\n Change shell, with an editor to allow you to change settings  with: chsh '
+echo $'\n chpass -shell'
+
+echo $'\n\n Shell can be change to bash with: chsh -s /bin/bash'
+
+echo $'\n\nIf for any reason that fails, it can be also done with \nchsh\npasswd -e\npasswd -l\nchpass\nusermod -s /usr/bin/bash'
+
+
+echo $'\nShell can also be change if the /etc/passwd file is edited and change the shell of a username'
+
+
+# Some systems will refuse to allow a login shell that is not listed in /etc/shells
+
+
+echo $'\n\nTo get the current shell: ps -p $$'
+ps -p $$
+
+echo $'\n\n Also can be achieved with: echo $0'
+#echo "$0"
+
+echo $'\n\nList users: '
+awk -F: '$3 > 999' /etc/passwd

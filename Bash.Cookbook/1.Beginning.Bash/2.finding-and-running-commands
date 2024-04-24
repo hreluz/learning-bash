@@ -1,0 +1,50 @@
+#!/bin/bash
+
+<<EOF
+The bash type command searches your enviroment (including aliases, keywords, functions, builtins, directories in $PATH, and the command hash table)
+for executable commands matching its arguments and displays the type and location of any matches
+
+    type which
+
+    type -a ls  -> print all matches instead of stopping at the first one
+EOF
+
+echo "type ls: "
+type ls
+
+echo $'\ntype ls -a (print all matches): '
+type -a ls
+
+<<EOF
+The which commmand is similar but only searches your $PATHo
+EOF
+
+echo $'\nwhich which:':
+which which
+
+
+<<EOF
+If you do not remember the name of the command, apropos can search manpage names and descriptions for regular expressions supplied as argument, same with man -k
+EOF
+
+
+echo $'\napropos music:'
+apropos music
+
+echo $'\nman -k music:'
+man -k music
+
+
+<<EOF
+locate and slocate consult database files about system to find files or commands almost instantly
+
+slocate will do the same as locate, but it will not list programs to which the user does not have access
+sudo updatedb
+EOF
+
+
+echo $'\nlocate apropos:'
+locate apropos
+
+echo $'\nslocate apropos:'
+slocate apropos
