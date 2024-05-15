@@ -1,0 +1,15 @@
+#!/bin/bash
+echo $'\nYou want more control over the formatting and placement of output with printf: '
+
+printf '%s = %d\n' Lines $LINES
+
+
+# the first argument for the string (10) is for the field width, and the second (11) is
+# for the number of bytes to be printed
+
+# the first argument for the float (f), the first number (4), is the width of the entire field, and the second argument (2), how many digits should be printed
+
+printf '%-10.11s = %4.2f\n' 'Gigahertz' 1.9273
+
+
+

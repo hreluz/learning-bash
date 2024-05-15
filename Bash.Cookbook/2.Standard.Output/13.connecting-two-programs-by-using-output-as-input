@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo $'\nUsing other programs\'s output as the input for another'
+echo 'There are two ways to achieve this'
+echo $'\n\nFirst to redirect the output from the first program into a file, and then use that as file input to the second program'
+
+echo $'\t\tcat one.file another.file > /tmp/cat.out'
+echo $'\t\t sort < /tmp/cat.out'
+
+echo $'\nThe second way is doing it on one step :'
+echo $'\t\tcat onefile another.file | sort'

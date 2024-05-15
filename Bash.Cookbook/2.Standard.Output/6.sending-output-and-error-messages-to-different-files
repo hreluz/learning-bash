@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo -e  $'Error messages can be saved to a file with 2>, for ex:  myprogram 2> message.errors'
+
+echo $'\n'
+echo -e $'Also can be achieved myprogram 1> messages.out 2> messages.err'

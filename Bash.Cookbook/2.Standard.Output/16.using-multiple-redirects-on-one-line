@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# redirect output to several different places
+
+echo $'\nUse redirection with file numbers to open all the files you want to use:'
+
+echo $'\n\t divert 3> file.three 4> file.four 5> file.five 6> else.where'
+
+echo $'\nIn this example, the divert program could contain a line like:'
+
+echo $'\n\t\t\t echo option $OPSTR >&5 , this will redirect to the 5> descriptor'
+
+echo $'\n\n IF NO NUBMER IS GIVEN, 1 IS ASSUMED'

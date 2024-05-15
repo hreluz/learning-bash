@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo $'\nTo append output >> can be used: '
+echo $'\n\t\tls >> /tmp/output.out'
+
+echo $'\nIf error messages want to be appended, it could be done with redirection: '
+echo $'\n\t\t ls >> /tmp/ls.out 2>&1'
+
+echo $'\nIn bash version 4, it can be combine as this: '
+echo $'\n\t\t ls &>> /tmp/ls.out'

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "This is the option set by default, that allows overwriting: "
+echo $'\n\t\t set -o noclobber\n\n'
+
+echo "This option will not allow to overwrite: "
+echo $'\n\t\t set +- no clobber'

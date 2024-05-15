@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo 'Sometimes some programs will not accept the pipe as an input, for example'
+echo $'\t\tfind . -name \'*.c\' | rm'
+
+echo $'\n\nIt can be done like this: '
+echo $'\t\t rm $(find . -name \'*.class\')'

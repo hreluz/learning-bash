@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Just  by  enclosing the string in quotes       or      single quotes      will also print the spacing"
+
+echo $'\n\n'
+
+echo 'By enclosing in single quotes, the shell will not interfere with the string at al $PWD'
+
+echo $'\n\n'
+
+echo "But on double quotes, some shell might substitution do take place  $PWD"

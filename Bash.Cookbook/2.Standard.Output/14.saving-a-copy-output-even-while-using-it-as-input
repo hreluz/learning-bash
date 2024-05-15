@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+echo 'If you want to debig a long sequence of piped I/O, you can use the tee command to split the output into two identical streams, on that is written to a file and the other that is written to standard output, for example'
+
+
+echo $'\n\t\t... uniq | tee /tmp/x.x | awk -f transform awk..'
+
+
+echo $'\n\nThe tee command writes the otput to the filename(s) specified as it parameter, also writes that same output to standard out'
+
+echo $'\n\n\n'
+echo $'\t\t find / -name \'*.c\' -print | less   -> but the output wouldn\'t be saved'
+
+echo $'\t\t find / -name \'*.c\' -print > /tmp/all.sourcess   -> but we have to wait until is completed to check the content'
+
+
+echo $'\t\t find / -name \'*.c\' -print | tee /tmp/all.sourcess   -> this will show the output and save ti at the same time to a file '
+
+echo $'\nFor redirecting the error we could add 2>&1'
+
+echo $'\t\t find / -name \'*.c\' -print 2>&1 | tee /tmp/all.sourcess  '
+

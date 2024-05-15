@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo 'Redirect output or error messages to separate files'
+echo -e 'both >& outfile'
+
+echo $'\nAlso can be used:'
+echo -e 'both &> outfile'
+echo $'\nOlder and slightly verbose:'
+echo -e 'both > outfile 2>&1'
+
+echo "Check comments"
+<<EOF
+
+    both > outfile 2>&1  same as both 1> outfile 2>&1
+
+    So the standard output will be redirected to outfile, but also the standard
+    error because 2>&1 says that the stderror should be redirected to the >&1
+
+    the other way around will be:
+  
+    both 2> outfile 1>&2
+
+    where the stderror goes to outfile and the  stdin will be redirected where stderror is bein saved
+    
+
+EOF
+

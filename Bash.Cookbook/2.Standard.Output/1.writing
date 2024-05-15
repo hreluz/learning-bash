@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo Please wait
+
+echo $'\nShell is parsing the argument on the echo command, this means that it does all its substitutions, wildcard, matching and other things before handing the arguments off to echo, also all the spacing arguments are ignored\n\n'
+
+echo this    was    ver widely spaced

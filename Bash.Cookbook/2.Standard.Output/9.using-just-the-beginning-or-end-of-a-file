@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo $'\nhead or tail command can be used for get just the beginning or end of the file'
+
+
+echo $'\nBy default the number of lines are 10,it can be changed as:'
+echo $'\n\ttail -5 filename or head -5 filename'

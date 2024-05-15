@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# you want to produce some output without the default newline that echo provides
+
+echo "On printf, just leave off the ending \n"
+
+printf "%s %s" next prompt
+
+echo $'\n'
+echo "On echo use the -n option, which suppresses the trailing newline: "
+echo -n prompt
+
+
+echo -e '\n'
+echo "echo can also use escape sequences wih the -e option: "
+echo -e 'hi\c\n\n\n\n'
+
+

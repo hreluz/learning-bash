@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Sometimes don't save the output into a file, in fact, sometimes you don't even want to see it all"
+echo "This can be achieved redirecting output to /dev/null as:"
+
+echo $'\t find /-name myfile -print 2> /dev/null'
+
+echo $'\t noise > /dev/null 2&1'

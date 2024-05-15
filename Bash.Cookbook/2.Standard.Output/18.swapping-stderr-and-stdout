@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo $'\t ./myscript 3>&1  1>&2 2>&3'
+
+echo "stdout is sent to file descriptor 3, then stderror is sent to stdout, and finally stdout (3) is sent to stderror (2)"
+

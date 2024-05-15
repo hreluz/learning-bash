@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo $'\n To ignore noclobber to overwrite a file, it can be done like: '
+echo $'\t\t echo something >| file'

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+echo 'If you wan to capture the output with a redirect, but you are typing several commands, doing it like this : '
+echo -e $'\t pwd;ls;ls > /tmp/all.out   -> this will only save the output of last command'
+
+
+echo 'The solution will be to use braces { } '
+echo $'\t { pwd;ls;cd .../elsewhere;pwd;ls; } > /tmp/all.out'
+echo $'\nREAD NOTES ... '
+# the braces are actually reserverd words, so they must be surrounded by whitespace, also semicolon is required before the closing brace
+# Alternatively, you could use parenthses, () 
+# (pwd; ls; cd ../elsewhere; pwd; ls) > /tmp/all.out  (you do not need to end on semicolon or have spaces)
+
+
+# NOTE: Commands enclosed in parentheses, however, run in another instance of the shell, a child of the current shell called a subshell'
+
+# when using cd on parenthesis, at the end will return to the same path, while with braces will stay in the cd path
+

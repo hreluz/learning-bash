@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo $'When saving output from ls, output is not expected -C option should be added: ls -C > output'
+
+
+ls -C ~ > /tmp/datatemp
+cat /tmp/datatemp
+
+echo $'\nAlso with the -1 option ls can be listed in a list'
+ls -1 ~
