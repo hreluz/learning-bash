@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Standarize the answer
+
+function choice {
+    CHOICE=''
+    local prompt="$*"
+    local answer
+
+    read -p "$prompt" answer
+    case "$answer" in
+        [yY1] ) CHOICE='y'
+            echo "Your choice was yes"
+            ;;
+        [nN0] ) CHOICE='n'
+            echo "Your choice was no"
+            ;;
+        *   )   CHOICE="$answer";;
+    esac
+}
+
+choice

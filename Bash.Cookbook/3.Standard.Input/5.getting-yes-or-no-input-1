@@ -1,0 +1,33 @@
+#!/bin/bash
+
+<<EOF
+ Get a simple yes or no input from the user, it is not case sensitive
+EOF
+
+function choose {
+    local default="$1"
+    local prompt="$2"
+    local choice_yes="$3"
+    local choice_no="$4"
+    local answer
+
+    read -p "$prompt" answer
+    [ -z "$answer" ] && answer="$default"
+
+
+    case "$answer" in
+        [yY1] ) eval "$choice_yes"
+            # error check
+            echo "You press yes"
+            ;;
+        [nN0] ) eval "$choice_no"
+            # error check
+            echo "You press no"
+            ;;
+
+        *   ) printf "%b" "Unexpected answer '$answer'!" >&2 ;;
+    esac
+}
+choose
+# choose <default (y or n)> <prompt> <yes action> <no action> 
+

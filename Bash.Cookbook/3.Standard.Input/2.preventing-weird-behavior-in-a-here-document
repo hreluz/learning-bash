@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+# simple lookup of our generous donors
+
+
+<<EOF
+It is a vey subtle difference, but the <<EOF can be replaced with <<\EOF, or <<'EOF' or
+even <<E\OF 
+EOF
+
+# if we do not scape, the $100 will be seen as a shell variable $1 followed by 2 zeros
+# ./2-preventing pete -> will print -> pete pete00 (since $1 is the first parameter) 
+#grep $1 <<'EOF'
+grep $1 <<EOF
+# name amt
+pete $100
+joe $200
+sam $ 25
+bill $ 9
+EOF
+
+# call as
+# ./2-fff bill

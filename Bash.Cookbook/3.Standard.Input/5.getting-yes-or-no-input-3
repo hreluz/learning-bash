@@ -1,0 +1,56 @@
+#!/bin/bash
+CHOICE=''
+THISPACKAGE="2020-10-10"
+
+function choice {
+    CHOICE=''
+    local prompt="$*"
+    local answer
+
+    read -p "$prompt" answer
+    answer_char="${answer:0:1}"
+
+    case "$answer_char" in
+        [yY1] ) CHOICE='y'
+            #echo "Your choice was yes"
+
+            ;;
+        [nN0] ) CHOICE='n'
+            #echo "Your choice was no"
+            ;;
+        *   )   CHOICE="$answer";;
+    esac
+}
+
+
+
+until [ "$CHOICE" = "y" ]; do
+    printf "%b" "This package's date is $THISPACKAGE\n" >&2
+    choice "Is that correct? [Y/,<New date>]: "
+    if [ -z "$CHOICE" ];then
+        CHOICE='y'
+    elif [ "$CHOICE" != "y" ];then
+        printf "%b" "Overriding $THISPACKAGE with $CHOICE\n"
+        THISPACKAGE=$CHOICE
+    fi
+done
+
+
+choice "Do you want to look at the error logfile? [Y/n]: "
+if [ "$CHOICE" != "n" ]; then
+    echo "showing an error log file"
+    #less error.log
+fi
+
+choice "Do you want to look at the message logfile? [Y/n]: "
+if [ "$CHOICE" = "y" ]; then
+    echo "showing a message log file"
+    #less message.log
+fi
+
+choice "Enter your favorite color, if you have one: "
+if [ -n "$CHOICE" ];then
+    printf "%b" "You chose: $CHOICE\n"
+else
+    printf "%b" "You do not have a favorite color.\n"
+fi

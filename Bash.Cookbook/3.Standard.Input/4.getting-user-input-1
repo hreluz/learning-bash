@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#read
+
+# next words after -p  in quotes will be the prompt
+read -p "answer me this: " ANSWER
+
+# -t options set a timeout
+read -t 3 -p "answer quickly: " NASWER
+
+
+echo "last"
+read PRE MID POST
+
