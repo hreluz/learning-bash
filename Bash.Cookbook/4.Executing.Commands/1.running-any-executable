@@ -1,0 +1,10 @@
+#!/bin/bash
+
+<<EOF
+bash uses a shell variable called $PATH to locate your executable. The $PATH variable is a list of directories
+If you set . before all the paths, you could be tricked if someone set some files as ls, cd
+A common practice among some bash users is to create a personal bin directory, analagous to the system directories /bin and /usr/bin where executables are kept. In your personal bin (if you create it in your home directory, its path is ~/bin) you can put copies of your favorite shell scripts and other customized or private commands.
+Then add that directory to the PATH, as 
+    PATH=~/bin:$PATH
+EOF
+

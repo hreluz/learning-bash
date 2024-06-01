@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+# separating two commands by the double ampersands tells bash to run the first command and then
+# the second command
+
+ls && echo "hello"
+
+
+# we can also set bash to exit if any error is found with set -e
+set -e 
+lsx
+rm hello

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+<<EOF
+   On a file can be run after another one
+EOF
+
+ls
+pwd
+echo "hola"
+
+echo $'\n\n'
+echo "In a terminal can be executed one after another one, regardless of whether the preceding ones fail, can be done  with semicolons, as :"
+echo $'\tls;pwd;echo\n'
+
+echo "If you only want to run the next program if the preceding program worked use &&, as :"
+echo $'\tls && pwd && short'

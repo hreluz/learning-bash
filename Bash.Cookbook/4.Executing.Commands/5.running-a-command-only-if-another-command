@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+cd /tmp
+if (( $? == 0 )); then echo "delete files ..." ; fi

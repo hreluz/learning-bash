@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# if you want to run a job in the background and expect to exit the shell before the job completes
+# then you can use nohup the job:
+
+echo $'It can be used as: \n\tnohup command-long &'
+
+
+<<EOF
+    When you put a job in the background, it is still a child process of the bash shell
+    When you exit an instance of the shell, bash sends a hangup (hup) signal to all of its child process
+    
+    The nohup command simply sets up the child process to ignore hangup signals.
+    You can still kill the job with the kill command, because kill sends a SIGTERM signal, not a SIGHUP signal
+    But with nohup, bash won't inadvertently kill your job when you exit
+
+    nohup appends your output to nohup.out , it appends no overwrite
+    Another output filenamed can be used instead of nohup.out
+
+EOF

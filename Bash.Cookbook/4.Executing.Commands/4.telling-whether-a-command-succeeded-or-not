@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "After a command is executed, you can insert this command: "
+echo $'\t\t echo $?'
+echo $'\n\t if it is 0, it means it was successfully executed, if not there was a problem'
+
+echo $'\n\n when scripting, the result could be assigned to a variable'
+echo $'\n\t command; STAT=$?'
+
+#wrong command
+pwx
+
+# (( )) evaluates an arithmetic expression
+if (( $? ));then
+    echo failed
+else
+    echo OK
+fi
+

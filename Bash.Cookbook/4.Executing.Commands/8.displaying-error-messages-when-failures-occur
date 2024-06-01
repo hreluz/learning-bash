@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd || { printf "%b" "cmd failed. You're on your own\n"; exit 1; }
+
+echo "gets here"

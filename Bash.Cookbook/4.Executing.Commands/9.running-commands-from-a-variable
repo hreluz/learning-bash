@@ -1,0 +1,10 @@
+#!/bin/bash
+
+FN=/tmp/x.x
+PROG=echo
+$PROG $FN
+
+PROG=cat
+$PROG $FN
+
+# always check if a variable already exists in your environment variables

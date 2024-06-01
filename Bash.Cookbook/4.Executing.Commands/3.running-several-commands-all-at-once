@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "You need to run three commands, but they are indepedent of each other and don't need to wait for previous to complete"
+echo $'This can be done using only one ampersand &  like :\n\t ls &'
+echo $'\nFor multiple commands could be as: \n\tlong & medium & short'
+
+echo $'\n The job can be reconected as fg %1 or fg ID'
+
+# NOTE: when we run a command 'in the background', there really is no such place in Linux, it only means 
+# is that we disconnect keyboard input from the command

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# run a series of scripts that are in a directory, where you only declare the directory
+
+
+for SCRIPT in scripts/* 
+do
+    if [ -f "$SCRIPT" -a -x "$SCRIPT" ]
+    then
+        $SCRIPT
+    fi
+done
